@@ -50,6 +50,7 @@ module OAuth2
          :assertion_type => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
          :assertion      => params[:assertion],
          :scope          => params[:scope],
+         :headers        => params[:headers] || {}
         }.merge(client_params)
       end
     end
