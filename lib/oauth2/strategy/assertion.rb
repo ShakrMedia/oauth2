@@ -83,7 +83,7 @@ module OAuth2
          :assertion      => params[:assertion],
          :scope          => params[:scope],
          :headers        => params[:headers] || {}
-        }.merge(client_params)
+        }
       end
     end
   end
