@@ -73,7 +73,7 @@ module OAuth2
       #   @see the access_token_opts argument to Client#get_token
 
       def get_token(params = {}, opts = {})
-        hash = bulid_request(params)
+        hash = build_request(params)
         @client.get_token(hash, opts.merge('refresh_token' => nil))
       end
 
