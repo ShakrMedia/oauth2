@@ -72,11 +72,9 @@ module OAuth2
       # @param [Hash] response_opts this will be merged with the token response to create the AccessToken object
       #   @see the access_token_opts argument to Client#get_token
 
-      def get_token(claims, encoding_opts, request_opts = {}, response_opts = {})
-        assertion = build_assertion(claims, encoding_opts)
-        params = build_request(assertion, request_opts)
-
-        @client.get_token(params, response_opts.merge('refresh_token' => nil))
+      def get_token(params = {}, opts = {})
+        hash = bulid_request(params)
+        @client.get_token(hash, opts.merge('refresh_token' => nil))
       end
 
       def build_request(params)
